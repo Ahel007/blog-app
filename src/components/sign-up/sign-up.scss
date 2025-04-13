@@ -1,0 +1,79 @@
+#root .sign-up {
+  width: 384px;
+  margin-inline: auto;
+  text-align: center;
+  background: #ebeef3;
+  margin-top: 59px;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.02),
+    0 1px 7px 0 rgba(0, 0, 0, 0.03),
+    0 3px 13px 0 rgba(0, 0, 0, 0.04),
+    0 5px 24px 0 rgba(0, 0, 0, 0.04),
+    0 9px 44px 0 rgba(0, 0, 0, 0.05),
+    0 22px 106px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 6px;
+  background: white;
+  padding: 48px 32px;
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    color: #262626;
+    margin-bottom: 21px;
+  }
+  .ant-form-item {
+    margin-bottom: 12px;
+    .ant-form-item-additional {
+      text-align: start;
+    }
+    .ant-form-item-label {
+      padding-bottom: 0;
+    }
+  }
+  &__bottom {
+    font-family: 'Roboto', sans-serif;
+    color: #8c8c8c;
+    a {
+      color: #1890ff;
+    }
+  }
+  &__button {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 9px;
+    margin-bottom: 8px;
+    height: 40px;
+    background: #1890ff;
+  }
+  input {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  label {
+    font-family: 'Roboto', sans-serif;
+    line-height: 157%;
+    color: #262626;
+    padding-bottom: 1px;
+  }
+  .ant-checkbox-label {
+    text-align: start;
+    font-size: 14px;
+    line-height: 157%;
+    color: #595959;
+  }
+  .ant-checkbox {
+    align-self: start;
+  }
+  .ant-checkbox-wrapper {
+    padding-top: 11px;
+    margin-top: 9px;
+    border-top: 1px solid #e8e8e8;
+  }
+  .ant-checkbox-input {
+    background: red;
+  }
+}

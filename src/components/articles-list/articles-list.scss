@@ -1,0 +1,27 @@
+.articles-list {
+  width: 938px;
+  margin-inline: auto;
+  background: #ebeef3;
+  margin-top: 13px;
+}
+.ant-pagination {
+  font-size: 12px;
+  line-height: 183%;
+  .ant-pagination-item {
+    background: #ebeef3;
+    border: none;
+    text-decoration: none;
+    a {
+      font-family: 'Inter', sans-serif;
+    }
+  }
+  .ant-pagination-item-active {
+    background: #1890ff;
+    a {
+      color: white;
+    }
+  }
+  .anticon {
+    vertical-align: baseline;
+  }
+}

@@ -1,0 +1,115 @@
+.article {
+  font-family: 'Inter', sans-serif;
+  width: 938px;
+  height: calc(100vh - 170px);
+  max-height: 807px;
+  margin-inline: auto;
+  background: #ebeef3;
+  margin-top: 26px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background: white;
+  padding: 16px;
+  &__flex {
+    .article__title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 140%;
+      color: #1890ff;
+      margin-bottom: 0;
+      span {
+        color: rgba(0, 0, 0, 0.75);
+        font-size: 16px;
+        svg {
+          margin-left: 8px;
+          transition-duration: 0.2s;
+          &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+  &__tag {
+    line-height: 149%;
+    font-family: 'Inter', sans-serif;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    height: 20px;
+    padding-inline: 5px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &__description {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 183%;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &__content {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    white-space: pre-wrap;
+    margin-right: 29px;
+    margin-top: 25px;
+    overflow-y: auto;
+    height: 160px;
+  }
+  &__info {
+    width: 140px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &__name {
+    font-size: 18px;
+    line-height: 156%;
+  }
+  &__date {
+    font-size: 12px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &__edit {
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #52c41a;
+    height: 31px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+    color: #52c41a;
+  }
+  &__delete {
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #f5222d;
+    color: #f5222d;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 157%;
+  }
+  &__avatar {
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+  }
+  .ant-image {
+    width: 46px;
+    height: 46px;
+  }
+  .ant-image-mask {
+    border-radius: 50%;
+  }
+}
+.ant-popover-inner {
+  font-family: 'Roboto', sans-serif;
+  width: 240px;
+  height: 104px;
+  line-height: 157%;
+  color: #595959;
+  span {
+    font-family: 'Roboto', sans-serif;
+  }
+}
