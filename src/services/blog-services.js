@@ -66,9 +66,6 @@ export default class BlogServices {
             throw new Error('Article not found');
           }
         })
-        .then((res) => {
-          console.log(res);
-        })
         .catch((error) => {
           dispatch({ type: 'ERROR', payload: error.message });
         })
@@ -98,9 +95,6 @@ export default class BlogServices {
             throw new Error('Article not found');
           }
         })
-        .then((res) => {
-          console.log(res);
-        })
         .catch((error) => {
           dispatch({ type: 'ERROR', payload: error.message });
         })
@@ -129,9 +123,6 @@ export default class BlogServices {
           } else {
             throw new Error('Article not found');
           }
-        })
-        .then((res) => {
-          console.log(res);
         })
         .catch((error) => {
           dispatch({ type: 'ERROR', payload: error.message });
@@ -289,6 +280,7 @@ export default class BlogServices {
           }
         })
         .then((res) => {
+          dispatch({ type: 'GET_USER_EMAIL', payload: res.user.email });
           fetch(`${this._apiBase}/profiles/${res.user.username}`)
             .then((response) => {
               if (response.ok) {

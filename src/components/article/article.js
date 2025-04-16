@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Typography, Tag, Flex, Layout, Button, Popconfirm, Image, Alert, Spin } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import { format } from 'date-fns';
 
 import BlogServices from '../../services/blog-services';
@@ -15,6 +15,7 @@ const service = new BlogServices();
 
 function Article() {
   const slug = useLocation().pathname.split('/').pop();
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -86,7 +87,10 @@ function Article() {
                   title={'Are you sure to delete this article?'}
                   okText="Yes"
                   cancelText="No"
-                  onConfirm={() => dispatch(service.deleteArticle(slug))}
+                  onConfirm={() => {
+                    dispatch(service.deleteArticle(slug));
+                    history.push('/');
+                  }}
                 >
                   <Button className="article__delete">Delete</Button>
                 </Popconfirm>

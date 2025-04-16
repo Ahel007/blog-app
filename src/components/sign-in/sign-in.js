@@ -14,7 +14,6 @@ function SignIn() {
   const isLoggenIn = useSelector((state) => state.loginReducer.isLoggenIn);
   const [form] = Form.useForm();
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
     dispatch(service.logIn(values));
     form.resetFields();
   };

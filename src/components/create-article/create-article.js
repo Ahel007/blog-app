@@ -1,7 +1,7 @@
 import { Button, Flex, Form, Input, Layout, Space, Typography } from 'antd';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 import BlogServices from '../../services/blog-services';
 import './create-article.scss';
@@ -15,10 +15,12 @@ function CreateArticle() {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
 
+  const history = useHistory();
+
   const [tags, setTags] = useState([]);
   const handleTagChange = (index, value) => {
     const newTags = [...tags];
-    newTags[index] = value;
+    newTags[index] = value.trim();
     setTags(newTags);
   };
   const handleDeleteTag = (index) => {
@@ -31,6 +33,7 @@ function CreateArticle() {
   };
   const onFinish = (values) => {
     dispatch(service.createArticle({ ...values, tags }));
+    history.push('/');
     form.resetFields();
   };
   if (!isLoggenIn) {
@@ -50,17 +53,55 @@ function CreateArticle() {
         <Title level={4} className="create-article__title">
           Create new article
         </Title>
-        <Form.Item name="title" rules={[{ required: true, message: 'Please input your Title!' }]} label="Title">
+        <Form.Item
+          name="title"
+          rules={[
+            { required: true, message: 'Please input your Title!' },
+            {
+              validator: (_, value) => {
+                if (value && value.trim() === '') {
+                  return Promise.reject('Title cannot be only whitespace.');
+                }
+                return Promise.resolve();
+              },
+            },
+          ]}
+          label="Title"
+        >
           <Input placeholder="Title" />
         </Form.Item>
         <Form.Item
           name="description"
-          rules={[{ required: true, message: 'Please input your Description!' }]}
+          rules={[
+            { required: true, message: 'Please input your Description!' },
+            {
+              validator: (_, value) => {
+                if (value && value.trim() === '') {
+                  return Promise.reject('Description cannot be only whitespace.');
+                }
+                return Promise.resolve();
+              },
+            },
+          ]}
           label="Short description"
         >
           <Input placeholder="Description" />
         </Form.Item>
-        <Form.Item name="text" rules={[{ required: true, message: 'Please input your Text!' }]} label="Text">
+        <Form.Item
+          name="text"
+          rules={[
+            { required: true, message: 'Please input your Text!' },
+            {
+              validator: (_, value) => {
+                if (value && value.trim() === '') {
+                  return Promise.reject('Text cannot be only whitespace.');
+                }
+                return Promise.resolve();
+              },
+            },
+          ]}
+          label="Text"
+        >
           <Input.TextArea placeholder="Text" className="create-article__text-input" />
         </Form.Item>
         <Form.Item label="Tags" className="create-article__tags">

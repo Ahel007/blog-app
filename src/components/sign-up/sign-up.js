@@ -15,7 +15,6 @@ function SignUp() {
   const [form] = Form.useForm();
   const onFinish = (values) => {
     if (values.agree === undefined) values.agree = true;
-    console.log('Received values of form: ', values);
     dispatch(service.register(values));
     form.resetFields();
   };
